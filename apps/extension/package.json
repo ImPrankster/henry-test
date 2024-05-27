@@ -16,6 +16,8 @@
   "dependencies": {
     "@henry/ui": "workspace:*",
     "@henry/validators": "workspace:*",
+    "@supabase/supabase-js": "^2.43.4",
+    "@tanstack/react-query": "^5.35.5",
     "plasmo": "0.86.3",
     "react": "18.3.1",
     "react-dom": "18.3.1",

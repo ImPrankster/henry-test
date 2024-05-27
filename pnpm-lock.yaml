@@ -32,6 +32,12 @@ importers:
       '@henry/validators':
         specifier: workspace:*
         version: link:../../packages/validators
+      '@supabase/supabase-js':
+        specifier: ^2.43.4
+        version: 2.43.4(bufferutil@4.0.8)(utf-8-validate@6.0.3)
+      '@tanstack/react-query':
+        specifier: ^5.35.5
+        version: 5.35.5(react@18.3.1)
       plasmo:
         specifier: 0.86.3
         version: 0.86.3(@swc/core@1.5.7(@swc/helpers@0.5.5))(@swc/helpers@0.5.5)(handlebars@4.7.8)(lodash@4.17.21)(postcss@8.4.38)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(ts-node@10.9.2(@swc/core@1.5.7(@swc/helpers@0.5.5))(@types/node@20.12.9)(typescript@5.4.5))
@@ -166,6 +172,49 @@ importers:
       tailwindcss:
         specifier: ^3.4.3
         version: 3.4.3(ts-node@10.9.2(@swc/core@1.5.7)(@types/node@20.12.9)(typescript@5.4.5))
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+
+  packages/api:
+    dependencies:
+      '@henry/db':
+        specifier: workspace:*
+        version: link:../db
+      '@henry/validators':
+        specifier: workspace:*
+        version: link:../validators
+      '@supabase/ssr':
+        specifier: ^0.3.0
+        version: 0.3.0(@supabase/supabase-js@2.43.4(bufferutil@4.0.8)(utf-8-validate@6.0.3))
+      '@supabase/supabase-js':
+        specifier: ^2.43.4
+        version: 2.43.4(bufferutil@4.0.8)(utf-8-validate@6.0.3)
+      '@trpc/server':
+        specifier: 11.0.0-rc.364
+        version: 11.0.0-rc.364
+      superjson:
+        specifier: 2.2.1
+        version: 2.2.1
+      zod:
+        specifier: ^3.23.8
+        version: 3.23.8
+    devDependencies:
+      '@henry/eslint-config':
+        specifier: workspace:*
+        version: link:../../tooling/eslint
+      '@henry/prettier-config':
+        specifier: workspace:*
+        version: link:../../tooling/prettier
+      '@henry/tsconfig':
+        specifier: workspace:*
+        version: link:../../tooling/typescript
+      eslint:
+        specifier: ^9.2.0
+        version: 9.2.0
+      prettier:
+        specifier: ^3.2.5
+        version: 3.2.5
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -2329,6 +2378,9 @@ packages:
 
   '@tootallnate/quickjs-emscripten@0.23.0':
     resolution: {integrity: sha512-C5Mc6rdnsaJDjO3UpGW/CQTHtCKaYlScZTly4JIu97Jxo/odCiH0ITnDXSJPTOrEKk/ycSZ0AOgTmkDtkOsvIA==}
+
+  '@trpc/server@11.0.0-rc.364':
+    resolution: {integrity: sha512-sGlrb2jSCiU74TrJ+N+WxIcJIUDyo0WOy0y30vIArw6oHFXjeithgxjvIu+PbN+VWt/Gt4ee8kVhnmxCW4X/Qw==}
 
   '@trysound/sax@0.2.0':
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
@@ -7947,6 +7999,8 @@ snapshots:
       react: 18.3.1
 
   '@tootallnate/quickjs-emscripten@0.23.0': {}
+
+  '@trpc/server@11.0.0-rc.364': {}
 
   '@trysound/sax@0.2.0': {}
 

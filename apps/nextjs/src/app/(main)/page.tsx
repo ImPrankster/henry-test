@@ -1,12 +1,13 @@
-"use client";
-
-import { api } from "~/trpc/react";
+import ClientShowcase from "./clientShowcase";
+import SSRShowcase from "./ssrShowcase";
 
 function HomePage() {
-  const { data } = api.post.all.useQuery();
   return (
-    <main className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
-      {data?.map((post) => <div key={post.id}>{post.title}</div>)}
+    <main className="flex flex-col sm:gap-4 sm:pl-14">
+      <div className="flex flex-col gap-4 p-4">
+        <ClientShowcase />
+        <SSRShowcase />
+      </div>
     </main>
   );
 }

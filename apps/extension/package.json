@@ -5,35 +5,33 @@
   "description": "extension",
   "author": "Leo Wang",
   "scripts": {
-    "dev": "pnpm with-env plasmo dev",
-    "build": "pnpm with-env plasmo build",
-    "package": "pnpm with-env plasmo package",
+    "clean": "git clean -xdf .plasmo build node_modules",
+    "dev": "plasmo dev --env=../../.env",
+    "build": "plasmo build --env=../../.env",
+    "package": "plasmo package --env=../../.env",
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "lint": "eslint",
-    "start": "pnpm with-env next start",
-    "typecheck": "tsc --noEmit",
-    "with-env": "dotenv -e ../../.env --"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@henry/api": "workspace:*",
     "@henry/db": "workspace:*",
     "@henry/ui": "workspace:*",
     "@henry/validators": "workspace:*",
-    "@henry/api": "workspace:*",
     "@supabase/ssr": "^0.3.0",
     "@supabase/supabase-js": "^2.43.4",
-    "@t3-oss/env-nextjs": "^0.10.1",
     "@tanstack/react-query": "^5.35.5",
+    "@tanstack/react-router": "^1.34.3",
     "@trpc/client": "11.0.0-rc.364",
     "@trpc/react-query": "11.0.0-rc.364",
-    "@trpc/server": "11.0.0-rc.364",
     "geist": "^1.3.0",
     "lucide-react": "^0.379.0",
     "next": "^14.2.3",
+    "plasmo": "0.86.3",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "superjson": "2.2.1",
-    "zod": "^3.23.8",
-    "plasmo": "0.86.3"
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@henry/eslint-config": "workspace:*",
@@ -53,5 +51,6 @@
     "host_permissions": [
       "https://*/*"
     ]
-  }
+  },
+  "prettier": "@henry/prettier-config"
 }

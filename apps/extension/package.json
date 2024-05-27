@@ -1,0 +1,44 @@
+{
+  "name": "@henry/extension",
+  "displayName": "Henry extension",
+  "version": "0.0.1",
+  "description": "HENRY browser extension",
+  "author": "Leo Wang",
+  "scripts": {
+    "dev": "pnpm with-env plasmo dev",
+    "build": "pnpm with-env plasmo build",
+    "package": "pnpm with-env plasmo package",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "with-env": "dotenv -e ../../.env --"
+  },
+  "dependencies": {
+    "@henry/ui": "workspace:*",
+    "@henry/validators": "workspace:*",
+    "plasmo": "0.86.3",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@henry/eslint-config": "workspace:*",
+    "@henry/prettier-config": "workspace:*",
+    "@henry/tailwind-config": "workspace:*",
+    "@henry/tsconfig": "workspace:*",
+    "@types/chrome": "0.0.258",
+    "@types/node": "^20.12.9",
+    "@types/react": "^18.3.2",
+    "@types/react-dom": "^18.3.0",
+    "dotenv-cli": "^7.4.2",
+    "eslint": "^9.2.0",
+    "prettier": "^3.2.5",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5"
+  },
+  "manifest": {
+    "host_permissions": [
+      "https://*/*"
+    ]
+  }
+}

@@ -3,10 +3,13 @@ import { GeistSans } from "geist/font/sans";
 import { Toaster } from "@henry/ui/sonner";
 import { TooltipProvider } from "@henry/ui/tooltip";
 
-import QueryContext from "~/components/context/queryContext";
-import SessionContextLayer from "~/components/context/sessionContext";
+import SessionContextLayer from "~/components/sessionContext";
 
 import "./globals.css";
+
+import { ThemeProvider, ThemeToggle } from "@henry/ui/theme";
+
+import { TRPCReactProvider } from "~/trpc/react";
 
 export const metadata = {
   title: "Create T3 App",
@@ -21,14 +24,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
-      <SessionContextLayer>
-        <QueryContext>
-          <TooltipProvider>
-            <body className="flex min-h-screen flex-col">{children}</body>
-            <Toaster />
-          </TooltipProvider>
-        </QueryContext>
-      </SessionContextLayer>
+      <body className="flex min-h-screen flex-col">
+        <SessionContextLayer>
+          <TRPCReactProvider>
+            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+              <TooltipProvider>
+                {children}
+                <Toaster />
+                <div className="absolute bottom-4 right-4">
+                  <ThemeToggle />
+                </div>
+              </TooltipProvider>
+            </ThemeProvider>
+          </TRPCReactProvider>
+        </SessionContextLayer>
+      </body>
     </html>
   );
 }

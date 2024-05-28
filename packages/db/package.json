@@ -27,6 +27,7 @@
     "push": "pnpm with-env drizzle-kit push",
     "studio": "pnpm with-env drizzle-kit studio",
     "pull": "pnpm with-env drizzle-kit introspect",
+    "generate": "pnpm with-env drizzle-kit generate",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false",
     "with-env": "dotenv -e ../../.env --"
   },

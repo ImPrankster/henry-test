@@ -3,6 +3,7 @@
   "displayName": "Henry Extension",
   "version": "0.0.1",
   "description": "extension",
+  "type": "module",
   "author": "Leo Wang",
   "scripts": {
     "clean": "git clean -xdf .plasmo build node_modules",

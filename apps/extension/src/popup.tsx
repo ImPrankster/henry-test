@@ -10,7 +10,8 @@ import {
 import "~/style.css";
 
 import ClientShowcase from "./components/clientShowcase";
-import { TRPCProvider } from "./utils/api";
+import SessionContextLayer from "./components/sessionContext";
+import { TRPCProvider } from "./lib/api";
 
 const rootRoute = createRootRoute({
   notFoundComponent: () => {
@@ -65,11 +66,13 @@ declare module "@tanstack/react-router" {
 
 function IndexPopup() {
   return (
-    <TRPCProvider>
-      <div className="h-[348px] w-[256px]">
-        <RouterProvider router={router} />
-      </div>
-    </TRPCProvider>
+    <SessionContextLayer>
+      <TRPCProvider>
+        <div className="h-[348px] w-[256px]">
+          <RouterProvider router={router} />
+        </div>
+      </TRPCProvider>
+    </SessionContextLayer>
   );
 }
 

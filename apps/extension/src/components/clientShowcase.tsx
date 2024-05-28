@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader } from "@henry/ui/card";
 import { Skeleton } from "@henry/ui/skeleton";
 
-import { api } from "~/utils/api";
+import { api } from "~/lib/api";
 
 function ClientShowcase() {
   const { data, isLoading } = api.post.all.useQuery();

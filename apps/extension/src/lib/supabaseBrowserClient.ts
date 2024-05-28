@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { createBrowserClient } from "@supabase/ssr";
+import { createClient } from "@supabase/supabase-js";
 
-export const supabase = createBrowserClient(
+export const supabase = createClient(
   process.env.PLASMO_PUBLIC_SUPABASE_URL!,
   process.env.PLASMO_PUBLIC_SUPABASE_KEY!,
 );

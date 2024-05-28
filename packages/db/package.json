@@ -26,14 +26,16 @@
     "lint": "eslint",
     "push": "pnpm with-env drizzle-kit push",
     "studio": "pnpm with-env drizzle-kit studio",
+    "pull": "pnpm with-env drizzle-kit introspect",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false",
     "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {
     "@t3-oss/env-core": "^0.10.1",
+    "@vercel/postgres": "^0.8.0",
     "drizzle-orm": "^0.30.10",
-    "postgres": "^3.4.3",
     "drizzle-zod": "^0.5.1",
+    "postgres": "^3.4.3",
     "zod": "^3.23.8"
   },
   "devDependencies": {

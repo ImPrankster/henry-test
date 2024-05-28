@@ -1,16 +1,11 @@
-import { createClient } from "~/server/supabase";
 import NavBar from "./nav";
 
-async function MainLayout({ children }: { children: React.ReactNode }) {
-  const {
-    data: { user },
-  } = await createClient().auth.getUser();
-
+function MainLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-h-screen w-full flex-col bg-muted/40">
+    <div className="flex min-h-screen w-full bg-muted/40">
       <NavBar />
-      {user?.email}
-      {children}
+      <div className="w-14" />
+      <div className="flex-1">{children}</div>
     </div>
   );
 }

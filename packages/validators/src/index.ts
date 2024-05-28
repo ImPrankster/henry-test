@@ -5,6 +5,6 @@ export const SignInFormSchema = z.object({
 });
 
 export const CreatePostSchema = z.object({
-  title: z.string(),
+  name: z.string(),
   content: z.string(),
 });

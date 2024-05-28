@@ -43,9 +43,7 @@
       "indexes": {
         "audit_logs_instance_id_idx": {
           "name": "audit_logs_instance_id_idx",
-          "columns": [
-            "instance_id"
-          ],
+          "columns": ["instance_id"],
           "isUnique": false
         }
       },
@@ -134,24 +132,17 @@
       "indexes": {
         "idx_auth_code": {
           "name": "idx_auth_code",
-          "columns": [
-            "auth_code"
-          ],
+          "columns": ["auth_code"],
           "isUnique": false
         },
         "idx_user_id_auth_method": {
           "name": "idx_user_id_auth_method",
-          "columns": [
-            "user_id",
-            "authentication_method"
-          ],
+          "columns": ["user_id", "authentication_method"],
           "isUnique": false
         },
         "flow_state_created_at_idx": {
           "name": "flow_state_created_at_idx",
-          "columns": [
-            "created_at"
-          ],
+          "columns": ["created_at"],
           "isUnique": false
         }
       },
@@ -222,16 +213,12 @@
       "indexes": {
         "identities_user_id_idx": {
           "name": "identities_user_id_idx",
-          "columns": [
-            "user_id"
-          ],
+          "columns": ["user_id"],
           "isUnique": false
         },
         "identities_email_idx": {
           "name": "identities_email_idx",
-          "columns": [
-            "email"
-          ],
+          "columns": ["email"],
           "isUnique": false
         }
       },
@@ -241,12 +228,8 @@
           "tableFrom": "identities",
           "tableTo": "users",
           "schemaTo": "auth",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -256,10 +239,7 @@
         "identities_provider_id_provider_unique": {
           "name": "identities_provider_id_provider_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "provider_id",
-            "provider"
-          ]
+          "columns": ["provider_id", "provider"]
         }
       }
     },
@@ -345,12 +325,8 @@
           "tableFrom": "mfa_amr_claims",
           "tableTo": "sessions",
           "schemaTo": "auth",
-          "columnsFrom": [
-            "session_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["session_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -360,10 +336,7 @@
         "mfa_amr_claims_session_id_authentication_method_pkey": {
           "name": "mfa_amr_claims_session_id_authentication_method_pkey",
           "nullsNotDistinct": false,
-          "columns": [
-            "session_id",
-            "authentication_method"
-          ]
+          "columns": ["session_id", "authentication_method"]
         }
       }
     },
@@ -405,9 +378,7 @@
       "indexes": {
         "mfa_challenge_created_at_idx": {
           "name": "mfa_challenge_created_at_idx",
-          "columns": [
-            "created_at"
-          ],
+          "columns": ["created_at"],
           "isUnique": false
         }
       },
@@ -417,12 +388,8 @@
           "tableFrom": "mfa_challenges",
           "tableTo": "mfa_factors",
           "schemaTo": "auth",
-          "columnsFrom": [
-            "factor_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["factor_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -488,25 +455,17 @@
       "indexes": {
         "mfa_factors_user_id_idx": {
           "name": "mfa_factors_user_id_idx",
-          "columns": [
-            "user_id"
-          ],
+          "columns": ["user_id"],
           "isUnique": false
         },
         "mfa_factors_user_friendly_name_unique": {
           "name": "mfa_factors_user_friendly_name_unique",
-          "columns": [
-            "user_id",
-            "friendly_name"
-          ],
+          "columns": ["user_id", "friendly_name"],
           "isUnique": true
         },
         "factor_id_created_at_idx": {
           "name": "factor_id_created_at_idx",
-          "columns": [
-            "user_id",
-            "created_at"
-          ],
+          "columns": ["user_id", "created_at"],
           "isUnique": false
         }
       },
@@ -516,12 +475,8 @@
           "tableFrom": "mfa_factors",
           "tableTo": "users",
           "schemaTo": "auth",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -582,24 +537,17 @@
       "indexes": {
         "one_time_tokens_token_hash_hash_idx": {
           "name": "one_time_tokens_token_hash_hash_idx",
-          "columns": [
-            "token_hash"
-          ],
+          "columns": ["token_hash"],
           "isUnique": false
         },
         "one_time_tokens_relates_to_hash_idx": {
           "name": "one_time_tokens_relates_to_hash_idx",
-          "columns": [
-            "relates_to"
-          ],
+          "columns": ["relates_to"],
           "isUnique": false
         },
         "one_time_tokens_user_id_token_type_key": {
           "name": "one_time_tokens_user_id_token_type_key",
-          "columns": [
-            "user_id",
-            "token_type"
-          ],
+          "columns": ["user_id", "token_type"],
           "isUnique": true
         }
       },
@@ -609,12 +557,8 @@
           "tableFrom": "one_time_tokens",
           "tableTo": "users",
           "schemaTo": "auth",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -684,39 +628,27 @@
       "indexes": {
         "refresh_tokens_instance_id_idx": {
           "name": "refresh_tokens_instance_id_idx",
-          "columns": [
-            "instance_id"
-          ],
+          "columns": ["instance_id"],
           "isUnique": false
         },
         "refresh_tokens_instance_id_user_id_idx": {
           "name": "refresh_tokens_instance_id_user_id_idx",
-          "columns": [
-            "instance_id",
-            "user_id"
-          ],
+          "columns": ["instance_id", "user_id"],
           "isUnique": false
         },
         "refresh_tokens_parent_idx": {
           "name": "refresh_tokens_parent_idx",
-          "columns": [
-            "parent"
-          ],
+          "columns": ["parent"],
           "isUnique": false
         },
         "refresh_tokens_updated_at_idx": {
           "name": "refresh_tokens_updated_at_idx",
-          "columns": [
-            "updated_at"
-          ],
+          "columns": ["updated_at"],
           "isUnique": false
         },
         "refresh_tokens_session_id_revoked_idx": {
           "name": "refresh_tokens_session_id_revoked_idx",
-          "columns": [
-            "revoked",
-            "session_id"
-          ],
+          "columns": ["revoked", "session_id"],
           "isUnique": false
         }
       },
@@ -726,12 +658,8 @@
           "tableFrom": "refresh_tokens",
           "tableTo": "sessions",
           "schemaTo": "auth",
-          "columnsFrom": [
-            "session_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["session_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -741,9 +669,7 @@
         "refresh_tokens_token_unique": {
           "name": "refresh_tokens_token_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "token"
-          ]
+          "columns": ["token"]
         }
       }
     },
@@ -809,9 +735,7 @@
       "indexes": {
         "saml_providers_sso_provider_id_idx": {
           "name": "saml_providers_sso_provider_id_idx",
-          "columns": [
-            "sso_provider_id"
-          ],
+          "columns": ["sso_provider_id"],
           "isUnique": false
         }
       },
@@ -821,12 +745,8 @@
           "tableFrom": "saml_providers",
           "tableTo": "sso_providers",
           "schemaTo": "auth",
-          "columnsFrom": [
-            "sso_provider_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["sso_provider_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -836,9 +756,7 @@
         "saml_providers_entity_id_key": {
           "name": "saml_providers_entity_id_key",
           "nullsNotDistinct": false,
-          "columns": [
-            "entity_id"
-          ]
+          "columns": ["entity_id"]
         }
       }
     },
@@ -898,23 +816,17 @@
       "indexes": {
         "saml_relay_states_created_at_idx": {
           "name": "saml_relay_states_created_at_idx",
-          "columns": [
-            "created_at"
-          ],
+          "columns": ["created_at"],
           "isUnique": false
         },
         "saml_relay_states_sso_provider_id_idx": {
           "name": "saml_relay_states_sso_provider_id_idx",
-          "columns": [
-            "sso_provider_id"
-          ],
+          "columns": ["sso_provider_id"],
           "isUnique": false
         },
         "saml_relay_states_for_email_idx": {
           "name": "saml_relay_states_for_email_idx",
-          "columns": [
-            "for_email"
-          ],
+          "columns": ["for_email"],
           "isUnique": false
         }
       },
@@ -924,12 +836,8 @@
           "tableFrom": "saml_relay_states",
           "tableTo": "sso_providers",
           "schemaTo": "auth",
-          "columnsFrom": [
-            "sso_provider_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["sso_provider_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
@@ -938,12 +846,8 @@
           "tableFrom": "saml_relay_states",
           "tableTo": "flow_state",
           "schemaTo": "auth",
-          "columnsFrom": [
-            "flow_state_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["flow_state_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -1042,24 +946,17 @@
       "indexes": {
         "sessions_not_after_idx": {
           "name": "sessions_not_after_idx",
-          "columns": [
-            "not_after"
-          ],
+          "columns": ["not_after"],
           "isUnique": false
         },
         "user_id_created_at_idx": {
           "name": "user_id_created_at_idx",
-          "columns": [
-            "user_id",
-            "created_at"
-          ],
+          "columns": ["user_id", "created_at"],
           "isUnique": false
         },
         "sessions_user_id_idx": {
           "name": "sessions_user_id_idx",
-          "columns": [
-            "user_id"
-          ],
+          "columns": ["user_id"],
           "isUnique": false
         }
       },
@@ -1069,12 +966,8 @@
           "tableFrom": "sessions",
           "tableTo": "users",
           "schemaTo": "auth",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -1120,9 +1013,7 @@
       "indexes": {
         "sso_domains_sso_provider_id_idx": {
           "name": "sso_domains_sso_provider_id_idx",
-          "columns": [
-            "sso_provider_id"
-          ],
+          "columns": ["sso_provider_id"],
           "isUnique": false
         }
       },
@@ -1132,12 +1023,8 @@
           "tableFrom": "sso_domains",
           "tableTo": "sso_providers",
           "schemaTo": "auth",
-          "columnsFrom": [
-            "sso_provider_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["sso_provider_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -1405,65 +1292,47 @@
       "indexes": {
         "users_instance_id_idx": {
           "name": "users_instance_id_idx",
-          "columns": [
-            "instance_id"
-          ],
+          "columns": ["instance_id"],
           "isUnique": false
         },
         "users_instance_id_email_idx": {
           "name": "users_instance_id_email_idx",
-          "columns": [
-            "instance_id"
-          ],
+          "columns": ["instance_id"],
           "isUnique": false
         },
         "confirmation_token_idx": {
           "name": "confirmation_token_idx",
-          "columns": [
-            "confirmation_token"
-          ],
+          "columns": ["confirmation_token"],
           "isUnique": true
         },
         "recovery_token_idx": {
           "name": "recovery_token_idx",
-          "columns": [
-            "recovery_token"
-          ],
+          "columns": ["recovery_token"],
           "isUnique": true
         },
         "email_change_token_current_idx": {
           "name": "email_change_token_current_idx",
-          "columns": [
-            "email_change_token_current"
-          ],
+          "columns": ["email_change_token_current"],
           "isUnique": true
         },
         "email_change_token_new_idx": {
           "name": "email_change_token_new_idx",
-          "columns": [
-            "email_change_token_new"
-          ],
+          "columns": ["email_change_token_new"],
           "isUnique": true
         },
         "users_is_anonymous_idx": {
           "name": "users_is_anonymous_idx",
-          "columns": [
-            "is_anonymous"
-          ],
+          "columns": ["is_anonymous"],
           "isUnique": false
         },
         "reauthentication_token_idx": {
           "name": "reauthentication_token_idx",
-          "columns": [
-            "reauthentication_token"
-          ],
+          "columns": ["reauthentication_token"],
           "isUnique": true
         },
         "users_email_partial_key": {
           "name": "users_email_partial_key",
-          "columns": [
-            "email"
-          ],
+          "columns": ["email"],
           "isUnique": true
         }
       },
@@ -1473,9 +1342,7 @@
         "users_phone_key": {
           "name": "users_phone_key",
           "nullsNotDistinct": false,
-          "columns": [
-            "phone"
-          ]
+          "columns": ["phone"]
         }
       }
     },
@@ -1551,9 +1418,7 @@
       "indexes": {
         "bname": {
           "name": "bname",
-          "columns": [
-            "name"
-          ],
+          "columns": ["name"],
           "isUnique": true
         }
       },
@@ -1598,9 +1463,7 @@
         "migrations_name_key": {
           "name": "migrations_name_key",
           "nullsNotDistinct": false,
-          "columns": [
-            "name"
-          ]
+          "columns": ["name"]
         }
       }
     },
@@ -1682,25 +1545,17 @@
       "indexes": {
         "bucketid_objname": {
           "name": "bucketid_objname",
-          "columns": [
-            "bucket_id",
-            "name"
-          ],
+          "columns": ["bucket_id", "name"],
           "isUnique": true
         },
         "name_prefix_search": {
           "name": "name_prefix_search",
-          "columns": [
-            "name"
-          ],
+          "columns": ["name"],
           "isUnique": false
         },
         "idx_objects_bucket_id_name": {
           "name": "idx_objects_bucket_id_name",
-          "columns": [
-            "bucket_id",
-            "name"
-          ],
+          "columns": ["bucket_id", "name"],
           "isUnique": false
         }
       },
@@ -1710,12 +1565,8 @@
           "tableFrom": "objects",
           "tableTo": "buckets",
           "schemaTo": "storage",
-          "columnsFrom": [
-            "bucket_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["bucket_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -1781,11 +1632,7 @@
       "indexes": {
         "idx_multipart_uploads_list": {
           "name": "idx_multipart_uploads_list",
-          "columns": [
-            "bucket_id",
-            "key",
-            "created_at"
-          ],
+          "columns": ["bucket_id", "key", "created_at"],
           "isUnique": false
         }
       },
@@ -1795,12 +1642,8 @@
           "tableFrom": "s3_multipart_uploads",
           "tableTo": "buckets",
           "schemaTo": "storage",
-          "columnsFrom": [
-            "bucket_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["bucket_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -1883,12 +1726,8 @@
           "tableFrom": "s3_multipart_uploads_parts",
           "tableTo": "s3_multipart_uploads",
           "schemaTo": "storage",
-          "columnsFrom": [
-            "upload_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["upload_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
@@ -1897,12 +1736,8 @@
           "tableFrom": "s3_multipart_uploads_parts",
           "tableTo": "buckets",
           "schemaTo": "storage",
-          "columnsFrom": [
-            "bucket_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["bucket_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -1960,12 +1795,8 @@
           "tableFrom": "post",
           "tableTo": "users",
           "schemaTo": "auth",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "cascade"
         }
@@ -1978,35 +1809,22 @@
     "auth.aal_level": {
       "name": "aal_level",
       "schema": "auth",
-      "values": [
-        "aal1",
-        "aal2",
-        "aal3"
-      ]
+      "values": ["aal1", "aal2", "aal3"]
     },
     "auth.code_challenge_method": {
       "name": "code_challenge_method",
       "schema": "auth",
-      "values": [
-        "s256",
-        "plain"
-      ]
+      "values": ["s256", "plain"]
     },
     "auth.factor_status": {
       "name": "factor_status",
       "schema": "auth",
-      "values": [
-        "unverified",
-        "verified"
-      ]
+      "values": ["unverified", "verified"]
     },
     "auth.factor_type": {
       "name": "factor_type",
       "schema": "auth",
-      "values": [
-        "totp",
-        "webauthn"
-      ]
+      "values": ["totp", "webauthn"]
     },
     "auth.one_time_token_type": {
       "name": "one_time_token_type",
